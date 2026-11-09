@@ -1,0 +1,280 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Laptop para el Taller</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Archivo:wght@700;800&display=swap">
+<style>
+/* Una sola columna ancha, letra grande y mucho aire: se lee de arriba abajo, sin tablas ni columnas apretadas. */
+:root {
+  --bg: #eef2f5; --hoja: #ffffff; --tinta: #16202b; --suave: #44505d; --linea: #cdd6df;
+  --acento: #1d5c9e; --acento-tinta: #ffffff; --bien: #1c7a3d; --bien-fondo: #e3f3e8;
+  --ojo: #9a5a00; --mal: #a8261c; --mal-fondo: #fbeceb; --pista: #dde4ea;
+  --f-titulo: "Archivo", "Arial Black", Arial, sans-serif;
+  --f-texto: "Atkinson Hyperlegible", Verdana, Tahoma, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #11161c; --hoja: #1a2129; --tinta: #eef3f7; --suave: #b8c3ce; --linea: #2e3946;
+  --acento: #7cb3ef; --acento-tinta: #0d1620; --bien: #74d394; --bien-fondo: #17301f;
+  --ojo: #f0b35c; --mal: #ff9a90; --mal-fondo: #33191a; --pista: #2a3440; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #11161c; --hoja: #1a2129; --tinta: #eef3f7; --suave: #b8c3ce; --linea: #2e3946;
+  --acento: #7cb3ef; --acento-tinta: #0d1620; --bien: #74d394; --bien-fondo: #17301f;
+  --ojo: #f0b35c; --mal: #ff9a90; --mal-fondo: #33191a; --pista: #2a3440; color-scheme: dark; }
+
+body { background: var(--bg); color: var(--tinta); font-family: var(--f-texto); font-size: 20px; line-height: 1.55; }
+.pagina { max-width: 900px; margin: 0 auto; padding-block: 28px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 40px; }
+h1, h2, h3, h4 { font-family: var(--f-titulo); line-height: 1.15; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2rem, 6vw, 2.8rem); font-weight: 800; }
+h2 { font-size: clamp(1.5rem, 4.5vw, 1.9rem); font-weight: 800; }
+h3 { font-size: clamp(1.45rem, 4vw, 1.75rem); font-weight: 800; }
+h4 { font-size: 1.15rem; font-weight: 700; }
+p { margin: 0; }
+.intro { display: grid; gap: 12px; }
+.intro p { font-size: 1.1rem; color: var(--suave); max-width: 62ch; }
+.seccion { display: grid; gap: 18px; }
+.seccion > p { color: var(--suave); max-width: 62ch; }
+
+/* Laptop actual */
+.actual { background: var(--hoja); border: 2px solid var(--linea); border-radius: 14px; padding: 22px; display: grid; gap: 14px; }
+.actual ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+.etiqueta { font-size: .85rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--suave); }
+.reparar { border-top: 2px dashed var(--linea); padding-top: 14px; color: var(--suave); }
+.reparar strong { color: var(--tinta); }
+
+/* Medidor */
+.medidor { display: grid; gap: 8px; }
+.medidor-cab { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-weight: 700; }
+.medidor-cab strong { font-family: var(--f-titulo); font-size: 1.6rem; color: var(--bien); font-variant-numeric: tabular-nums; }
+.pista { position: relative; height: 22px; background: var(--pista); border-radius: 11px; margin-bottom: 26px; }
+.relleno { height: 100%; background: var(--bien); border-radius: 11px; }
+.marca { position: absolute; top: -5px; bottom: -5px; width: 3px; background: var(--tinta); }
+.marca span { position: absolute; top: 34px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: .8rem; font-weight: 700; color: var(--suave); }
+.actual .relleno { background: var(--ojo); }
+.actual .medidor-cab strong { color: var(--ojo); }
+
+/* Tarjetas recomendadas */
+.tarjeta { background: var(--hoja); border: 2px solid var(--linea); border-radius: 16px; overflow: hidden;
+  display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); }
+.tarjeta-primera { border: 4px solid var(--bien); }
+.foto { background: #ffffff; display: grid; place-items: center; padding: 18px; }
+.foto img { width: 100%; height: auto; max-width: 100%; object-fit: contain; aspect-ratio: 1; }
+.cuerpo { padding: 24px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.puesto { font-weight: 700; font-size: 1.05rem; color: var(--suave); }
+.tarjeta-primera .puesto { display: inline-block; justify-self: start; background: var(--bien-fondo); color: var(--bien); padding: 4px 14px; border-radius: 999px; }
+.nota { font-size: 1.05rem; }
+.veces { font-weight: 700; }
+.precios { margin: 0; display: grid; gap: 6px; border-top: 2px solid var(--linea); padding-top: 14px; }
+.precios div { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.precios dt { color: var(--suave); }
+.precios dd { margin: 0; font-weight: 700; font-size: 1.2rem; font-variant-numeric: tabular-nums; }
+.precios .total dd { font-family: var(--f-titulo); font-size: 1.7rem; }
+.boton { display: block; text-align: center; background: var(--acento); color: var(--acento-tinta); text-decoration: none;
+  font-weight: 700; font-size: 1.2rem; padding: 16px 20px; border-radius: 12px; }
+.boton:hover { filter: brightness(1.08); }
+.boton:focus-visible, .enlace-sec:focus-visible { outline: 4px solid var(--ojo); outline-offset: 3px; }
+.enlace-sec { color: var(--acento); font-size: 1rem; text-align: center; }
+
+/* No convienen */
+.lista-no { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.mini { background: var(--hoja); border: 2px solid var(--linea); border-radius: 14px; padding: 14px; display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 16px; align-items: center; }
+.mini img { width: 110px; height: 110px; object-fit: contain; background: #ffffff; border-radius: 10px; }
+.mini > div { display: grid; gap: 4px; min-width: 0; }
+.razon { color: var(--mal); font-weight: 700; }
+.mini-datos { color: var(--suave); font-size: .95rem; font-variant-numeric: tabular-nums; }
+
+/* Servicio */
+.servicio { background: var(--hoja); border: 2px solid var(--linea); border-radius: 14px; padding: 22px; display: grid; gap: 14px; }
+.servicio ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; }
+.servicio .suma { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; border-top: 2px solid var(--linea); padding-top: 14px; font-weight: 700; }
+.servicio .suma strong { font-family: var(--f-titulo); font-size: 1.7rem; font-variant-numeric: tabular-nums; }
+.aviso { background: var(--mal-fondo); border-radius: 14px; padding: 18px 20px; display: grid; gap: 8px; }
+.aviso p { max-width: 62ch; }
+
+@media (max-width: 640px) {
+  body { font-size: 19px; }
+  .tarjeta { grid-template-columns: minmax(0, 1fr); }
+  .foto img { max-width: 320px; }
+  .mini { grid-template-columns: 84px minmax(0, 1fr); }
+  .mini img { width: 84px; height: 84px; }
+}
+</style>
+
+<main class="pagina">
+  <header class="intro">
+    <h1>¿Qué laptop comprar para el taller?</h1>
+    <p>Comparamos 10 laptops para cambiar la que tiene ahora. Necesita servir para Excel, para dibujar piezas en 3D para el torno y para la impresora 3D.</p>
+    <p>Precios revisados el 7 de noviembre de 2026 en Mercado Libre y Amazon. Pueden cambiar, sobre todo en el Buen Fin.</p>
+  </header>
+
+  <section class="seccion" aria-labelledby="t-actual">
+    <h2 id="t-actual">Su laptop de ahora</h2>
+    <div class="actual">
+      <p class="etiqueta">Lenovo IdeaPad Gaming 3 · del año 2020</p>
+      <ul>
+        <li>Le faltan teclas.</li>
+        <li>El disco está casi lleno, por eso va lenta.</li>
+        <li>Su tarjeta de video es sencilla para dibujar en 3D.</li>
+      </ul>
+      <div class="medidor" role="img" aria-label="Sirve para el taller: 60 por ciento.">
+        <div class="medidor-cab"><span>Qué tan bien sirve hoy para el taller</span><strong>60%</strong></div>
+        <div class="pista" style="margin-bottom:0"><div class="relleno" style="width:60%"></div></div>
+      </div>
+      <p class="reparar"><strong>Otra opción: arreglarla.</strong> Con un disco nuevo de 1 TB, limpieza y teclado nuevo llegaría a un 70%. Las laptops recomendadas llegan a 90% o más.</p>
+    </div>
+  </section>
+
+  <section class="seccion" aria-labelledby="t-top">
+    <h2 id="t-top">Las 3 que recomendamos</h2>
+    <p>Las tres tienen tarjeta de video, que es lo más importante para dibujar en 3D. La línea negra en cada barra marca su laptop de ahora.</p>
+    <article class="tarjeta tarjeta-primera">
+  <div class="foto"><img src="img/laptop1.jpg" alt="Foto de la laptop Lenovo LOQ 15" loading="lazy" width="600" height="600"></div>
+  <div class="cuerpo">
+    <p class="puesto">★ La que más conviene</p>
+    <h3>Lenovo LOQ 15</h3>
+    <p class="nota">La más barata de las buenas. La vende Amazon directamente.</p>
+    <div class="medidor medidor-grande" role="img" aria-label="Sirve para el taller: 90 por ciento. Su laptop actual: 60 por ciento.">
+  <div class="medidor-cab"><span>Qué tan bien sirve para el taller</span><strong>90%</strong></div>
+  <div class="pista"><div class="relleno" style="width:90%"></div><div class="marca" style="left:60%"><span>la suya: 60%</span></div></div>
+</div>
+    <p class="veces">2.5 veces más potente para dibujar en 3D que la que tiene ahora.</p>
+    <dl class="precios">
+      <div><dt>Precio de la laptop</dt><dd>$20,099</dd></div>
+      <div class="total"><dt>Total con instalación</dt><dd>$22,879</dd></div>
+    </dl>
+    <a class="boton" href="https://www.amazon.com.mx/dp/B0H2X6BJM1" target="_blank" rel="noopener">Verla en Amazon</a>
+    <a class="enlace-sec" href="https://www.mercadolibre.com.mx/laptop-gamer-lenovo-loq-15arp10e-geforce-rtx-4050-6gb-ryzen-7735hs-16gb-ddr5-512gb-ssd-pantalla-156-ips-fhd-144hz-teclado-espanol/p/MLM81055844" target="_blank" rel="noopener">También en Mercado Libre: $26,799</a>
+  </div>
+</article><article class="tarjeta">
+  <div class="foto"><img src="img/laptop2.jpg" alt="Foto de la laptop Acer Nitro V 15" loading="lazy" width="600" height="600"></div>
+  <div class="cuerpo">
+    <p class="puesto">Opción 2</p>
+    <h3>Acer Nitro V 15</h3>
+    <p class="nota">La tarjeta de video más nueva de la lista. La vende Amazon directamente.</p>
+    <div class="medidor medidor-grande" role="img" aria-label="Sirve para el taller: 90 por ciento. Su laptop actual: 60 por ciento.">
+  <div class="medidor-cab"><span>Qué tan bien sirve para el taller</span><strong>90%</strong></div>
+  <div class="pista"><div class="relleno" style="width:90%"></div><div class="marca" style="left:60%"><span>la suya: 60%</span></div></div>
+</div>
+    <p class="veces">2.8 veces más potente para dibujar en 3D que la que tiene ahora.</p>
+    <dl class="precios">
+      <div><dt>Precio de la laptop</dt><dd>$22,709</dd></div>
+      <div class="total"><dt>Total con instalación</dt><dd>$25,489</dd></div>
+    </dl>
+    <a class="boton" href="https://www.amazon.com.mx/dp/B0G26XBX74" target="_blank" rel="noopener">Verla en Amazon</a>
+    <a class="enlace-sec" href="https://www.mercadolibre.com.mx/laptop-gamer-acer-nitro-v-i7-16gb-ssd-512gb-rtx-5050-gris/p/MLM65247825" target="_blank" rel="noopener">También en Mercado Libre: $27,999</a>
+  </div>
+</article><article class="tarjeta">
+  <div class="foto"><img src="img/laptop3.jpg" alt="Foto de la laptop ASUS TUF Gaming F16" loading="lazy" width="600" height="600"></div>
+  <div class="cuerpo">
+    <p class="puesto">Opción 3</p>
+    <h3>ASUS TUF Gaming F16</h3>
+    <p class="nota">Aguanta polvo y vibración del taller. Pantalla de 16 pulgadas y el doble de espacio. Tienda oficial de Asus.</p>
+    <div class="medidor medidor-grande" role="img" aria-label="Sirve para el taller: 95 por ciento. Su laptop actual: 60 por ciento.">
+  <div class="medidor-cab"><span>Qué tan bien sirve para el taller</span><strong>95%</strong></div>
+  <div class="pista"><div class="relleno" style="width:95%"></div><div class="marca" style="left:60%"><span>la suya: 60%</span></div></div>
+</div>
+    <p class="veces">2.5 veces más potente para dibujar en 3D que la que tiene ahora.</p>
+    <dl class="precios">
+      <div><dt>Precio de la laptop</dt><dd>$23,646</dd></div>
+      <div class="total"><dt>Total con instalación</dt><dd>$26,426</dd></div>
+    </dl>
+    <a class="boton" href="https://www.mercadolibre.com.mx/laptop-asus-tuf-gaming-f16-rtx-4050-intel-core-7-16gb-1tb-ssd-fhd/p/MLM79736589" target="_blank" rel="noopener">Verla en Mercado Libre</a>
+    <a class="enlace-sec" href="https://www.amazon.com.mx/dp/B0FH429674" target="_blank" rel="noopener">También en Amazon: $23,999</a>
+  </div>
+</article>
+  </section>
+
+  <section class="seccion" aria-labelledby="t-alt">
+    <h2 id="t-alt">También sirven</h2>
+    <p>Son buenas, pero tienen un detalle que las deja abajo de las tres anteriores.</p>
+    <article class="tarjeta">
+  <div class="foto"><img src="img/laptop4.jpg" alt="Foto de la laptop HP Victus 15" loading="lazy" width="600" height="600"></div>
+  <div class="cuerpo">
+    <p class="puesto">Otra opción</p>
+    <h3>HP Victus 15</h3>
+    <p class="nota">Ojo: el precio de Amazon es con teclado en inglés. Con teclado en español cuesta $25,999.</p>
+    <div class="medidor medidor-grande" role="img" aria-label="Sirve para el taller: 90 por ciento. Su laptop actual: 60 por ciento.">
+  <div class="medidor-cab"><span>Qué tan bien sirve para el taller</span><strong>90%</strong></div>
+  <div class="pista"><div class="relleno" style="width:90%"></div><div class="marca" style="left:60%"><span>la suya: 60%</span></div></div>
+</div>
+    <p class="veces">2.5 veces más potente para dibujar en 3D que la que tiene ahora.</p>
+    <dl class="precios">
+      <div><dt>Precio de la laptop</dt><dd>$22,923</dd></div>
+      <div class="total"><dt>Total con instalación</dt><dd>$25,703</dd></div>
+    </dl>
+    <a class="boton" href="https://www.amazon.com.mx/dp/B0FM8VC248" target="_blank" rel="noopener">Verla en Amazon</a>
+    <a class="enlace-sec" href="https://www.mercadolibre.com.mx/notebook-gamer-hp-victus-15-con-ryzen-7-y-rtx-4050-16-gb-ram-y-512-gb-ssd/p/MLM53049202" target="_blank" rel="noopener">También en Mercado Libre: $23,799</a>
+  </div>
+</article><article class="tarjeta">
+  <div class="foto"><img src="img/laptop5.jpg" alt="Foto de la laptop MSI Thin A15" loading="lazy" width="600" height="600"></div>
+  <div class="cuerpo">
+    <p class="puesto">Otra opción</p>
+    <h3>MSI Thin A15</h3>
+    <p class="nota">Es delgada y se calienta más cuando se usa muchas horas seguidas.</p>
+    <div class="medidor medidor-grande" role="img" aria-label="Sirve para el taller: 85 por ciento. Su laptop actual: 60 por ciento.">
+  <div class="medidor-cab"><span>Qué tan bien sirve para el taller</span><strong>85%</strong></div>
+  <div class="pista"><div class="relleno" style="width:85%"></div><div class="marca" style="left:60%"><span>la suya: 60%</span></div></div>
+</div>
+    <p class="veces">2.5 veces más potente para dibujar en 3D que la que tiene ahora.</p>
+    <dl class="precios">
+      <div><dt>Precio de la laptop</dt><dd>$22,300</dd></div>
+      <div class="total"><dt>Total con instalación</dt><dd>$25,080</dd></div>
+    </dl>
+    <a class="boton" href="https://www.mercadolibre.com.mx/laptop-msi-thin-a15-156-ryzen-7-ram-16gb-ssd-512gb-rtx-4050-color-negro/p/MLM46082390" target="_blank" rel="noopener">Verla en Mercado Libre</a>
+    <a class="enlace-sec" href="https://www.amazon.com.mx/dp/B0H5WDRBBX" target="_blank" rel="noopener">También en Amazon: $23,999</a>
+  </div>
+</article>
+  </section>
+
+  <section class="seccion" aria-labelledby="t-no">
+    <h2 id="t-no">Estas no le convienen</h2>
+    <p>Aunque son nuevas, varias dibujan en 3D peor que la laptop que ya tiene.</p>
+    <ul class="lista-no">
+      <li class="mini">
+  <img src="img/laptop6.jpg" alt="Foto de la laptop Lenovo LOQ 15 (RTX 3050)" loading="lazy" width="600" height="600">
+  <div>
+    <h4>Lenovo LOQ 15 (RTX 3050)</h4>
+    <p class="razon">Cuesta más que la opción 1 y es más débil.</p>
+    <p class="mini-datos">Sirve 80% para el taller · $23,999 en Mercado Libre</p>
+  </div>
+</li><li class="mini">
+  <img src="img/laptop7.jpg" alt="Foto de la laptop Lenovo IdeaPad Slim 3" loading="lazy" width="600" height="600">
+  <div>
+    <h4>Lenovo IdeaPad Slim 3</h4>
+    <p class="razon">Solo sirve si ya no va a dibujar en 3D. Para Excel le sobra.</p>
+    <p class="mini-datos">Sirve 60% para el taller · $14,199 en Mercado Libre</p>
+  </div>
+</li><li class="mini">
+  <img src="img/laptop8.jpg" alt="Foto de la laptop Acer Aspire Go 15" loading="lazy" width="600" height="600">
+  <div>
+    <h4>Acer Aspire Go 15</h4>
+    <p class="razon">No tiene tarjeta de video: dibuja en 3D peor que la que ya tiene.</p>
+    <p class="mini-datos">Sirve 55% para el taller · $18,288 en Amazon</p>
+  </div>
+</li><li class="mini">
+  <img src="img/laptop9.jpg" alt="Foto de la laptop HP 15" loading="lazy" width="600" height="600">
+  <div>
+    <h4>HP 15</h4>
+    <p class="razon">No tiene tarjeta de video: dibuja en 3D peor que la que ya tiene.</p>
+    <p class="mini-datos">Sirve 50% para el taller · $13,999 en Amazon</p>
+  </div>
+</li><li class="mini">
+  <img src="img/laptop10.jpg" alt="Foto de la laptop Lenovo V14" loading="lazy" width="600" height="600">
+  <div>
+    <h4>Lenovo V14</h4>
+    <p class="razon">No tiene tarjeta de video y la pantalla es más chica (14 pulgadas).</p>
+    <p class="mini-datos">Sirve 45% para el taller · $11,649 en Mercado Libre</p>
+  </div>
+</li>
+    </ul>
+  </section>
+
+  <section class="aviso" aria-labelledby="t-aviso">
+    <h2 id="t-aviso" style="font-size:1.3rem">Antes de comprar</h2>
+    <p>Confirme el precio en la página de la tienda. La laptop la compra usted con el botón azul; el servicio de instalación se paga aparte.</p>
+  </section>
+</main>
+
+</body></html>
